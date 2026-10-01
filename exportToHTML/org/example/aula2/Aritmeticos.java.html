@@ -1,0 +1,126 @@
+<html>
+<head>
+<title>Aritmeticos.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #0033b3;}
+.s1 { color: #080808;}
+.s2 { color: #8c8c8c; font-style: italic;}
+.s3 { color: #067d17;}
+.s4 { color: #1750eb;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Aritmeticos.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">org.example.aula2;</span>
+
+<span class="s0">public class </span><span class="s1">Aritmeticos {</span>
+    <span class="s0">static void </span><span class="s1">main() {</span>
+
+        <span class="s2">/* 
+ 
+        Concatenação: 
+        1- Crie variáveis para um nome, uma cidade e uma idade. Mostre em uma única linha: &quot;Meu nome é Ana, moro em Salvador e tenho 28 anos.&quot; 
+        2 — Crie variáveis para o nome de um produto (&quot;Caneca&quot;), o preço (12.50) e a quantidade (4). Mostre: &quot;Comprei 4 unidades de Caneca por R$ 12.5 cada. Total: R$ 50.0&quot; 
+        3- Crie duas variáveis com números inteiros. Mostre a soma em uma frase completa, assim: &quot;A soma de 15 e 4 é igual a 19.&quot; 
+ 
+        Aritméticos: 
+        0- Rode esse código: 
+        System.out.println(&quot;2 + 2 = &quot; + 2 + 2);. 
+        Agora rode: 
+        System.out.println(&quot;2 + 2 = &quot; + (2 + 2)); 
+        Explique em um comentário por que deram resultados diferentes. 
+        1- Crie variáveis para dois números inteiros de valor a = 10 e b = 3 e mostre na tela: soma, subtração, multiplicação, divisão e resto. 
+        2- Crie variáveis para dois números decimais de valor a = 10 e b = 3 e mostre na tela: soma, subtração, multiplicação, divisão e resto. 
+        3- Crie variáveis para três notas (8, 6 e 10). Mostre a soma e a média. 
+        4- Faça a operação a + b * c, sendo a = 3, b = 4 e c = 5. 
+        5- Faça a operação (a + b) * c, sendo a = 3, b = 4 e c = 5. 
+        Desafio: Crie uma variável com 3785 segundos. Mostre quantos minutos inteiros isso dá e quantos segundos sobram. 
+ 
+        Dica: segundos/60 dá os minutos. segundos % 60 mostra os segundos restantes. 
+ 
+        Cheatsheet: 
+        Printar na tela: 
+        System.out.println(); (Com aspas pra texto!!) 
+        Operadores Aritméticos: +, -, *, /, % 
+ 
+        */</span>
+
+        <span class="s2">// Ítem 0</span>
+
+        <span class="s1">System.out.println(</span><span class="s3">&quot;2 + 2 = &quot; </span><span class="s1">+ </span><span class="s4">2 </span><span class="s1">+ </span><span class="s4">2</span><span class="s1">);</span>
+
+        <span class="s1">System.out.println(</span><span class="s3">&quot;2 + 2 = &quot; </span><span class="s1">+ (</span><span class="s4">2 </span><span class="s1">+ </span><span class="s4">2</span><span class="s1">));</span>
+
+        <span class="s2">/* 
+ 
+        No primeiro comando, ocorreu a concatenação. Java avalia a expressão da esquerda para a direita e 
+        vai concatenando. 
+ 
+        No segundo comando, como foram inseridos parênteses, Java tem de executar primeiro dentro dele. 
+        Foi realizada a operação matemática de soma. 
+ 
+        Isto também aconteceu, no exercício anterior, quando você pediu a soma de 15 + 4. :-), pois 
+ 
+        Ótimo exercício para fixar o conteúdo! 
+ 
+         */</span>
+
+        <span class="s2">// Ítem 1</span>
+
+        <span class="s0">int </span><span class="s1">a = </span><span class="s4">10</span><span class="s1">;</span>
+        <span class="s0">int </span><span class="s1">b = </span><span class="s4">3</span><span class="s1">;</span>
+
+        <span class="s1">System.out.println(</span><span class="s3">&quot;O resultado de a + b é &quot; </span><span class="s1">+ (a + b));</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;O resultado de a - b é &quot; </span><span class="s1">+ (a - b));</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;O resultado de a * b é &quot; </span><span class="s1">+ (a * b));</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;O resultado de a / b é &quot; </span><span class="s1">+ (a / b));</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;O resto da divisão de a / b é &quot; </span><span class="s1">+ (a % b));</span>
+
+        <span class="s2">// Ítem 2</span>
+
+        <span class="s0">double </span><span class="s1">ad = </span><span class="s4">10</span><span class="s1">;</span>
+        <span class="s0">double </span><span class="s1">bd = </span><span class="s4">3</span><span class="s1">;</span>
+
+        <span class="s1">System.out.println(</span><span class="s3">&quot;O resultado de a + b é &quot; </span><span class="s1">+ (ad + bd));</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;O resultado de a - b é &quot; </span><span class="s1">+ (ad - bd));</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;O resultado de a * b é &quot; </span><span class="s1">+ (ad * bd));</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;O resultado de a / b é &quot; </span><span class="s1">+ (ad / bd));</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;O resto da divisão de a / b é &quot; </span><span class="s1">+ (ad % bd));</span>
+
+        <span class="s2">// Ítem 3</span>
+
+        <span class="s0">double </span><span class="s1">nota1 = </span><span class="s4">8</span><span class="s1">;</span>
+        <span class="s0">double </span><span class="s1">nota2 = </span><span class="s4">6</span><span class="s1">;</span>
+        <span class="s0">double </span><span class="s1">nota3 = </span><span class="s4">10</span><span class="s1">;</span>
+
+        <span class="s1">System.out.println(</span><span class="s3">&quot;A soma das três notas é &quot; </span><span class="s1">+ (nota1 + nota2 + nota3));</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;A média das três notas é &quot; </span><span class="s1">+ ((nota1 + nota2 + nota3) / </span><span class="s4">3</span><span class="s1">));</span>
+
+        <span class="s2">// Ítem 4</span>
+
+        <span class="s0">int </span><span class="s1">a1 = </span><span class="s4">3</span><span class="s1">;</span>
+        <span class="s0">int </span><span class="s1">b1 = </span><span class="s4">4</span><span class="s1">;</span>
+        <span class="s0">int </span><span class="s1">c1 = </span><span class="s4">5</span><span class="s1">;</span>
+
+        <span class="s1">System.out.println(</span><span class="s3">&quot;O resultado de a + b * c é &quot; </span><span class="s1">+ (a1 + b1 * c1));</span>
+
+        <span class="s2">// Ítem 5</span>
+
+        <span class="s1">System.out.println(</span><span class="s3">&quot;O resultado de (a + b) * c é &quot; </span><span class="s1">+ ((a1 + b1) * c1));</span>
+
+        <span class="s2">// Desafio</span>
+
+        <span class="s0">int </span><span class="s1">segundos = </span><span class="s4">3785</span><span class="s1">;</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Em 3.785 segundos temos &quot; </span><span class="s1">+ (segundos / </span><span class="s4">60</span><span class="s1">) + </span><span class="s3">&quot; minutos inteiros e restam &quot; </span><span class="s1">+ segundos % </span><span class="s4">60 </span><span class="s1">+ </span><span class="s3">&quot; segundos&quot;</span><span class="s1">);</span>
+
+
+    <span class="s1">}</span>
+<span class="s1">}</span>
+</pre>
+</body>
+</html>

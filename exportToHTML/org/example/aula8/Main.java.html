@@ -1,0 +1,169 @@
+<html>
+<head>
+<title>Main.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #0033b3;}
+.s1 { color: #080808;}
+.s2 { color: #8c8c8c; font-style: italic;}
+.s3 { color: #067d17;}
+.s4 { color: #1750eb;}
+.s5 { color: #0037a6;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Main.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">org.example.aula8;</span>
+
+<span class="s0">import </span><span class="s1">java.util.Scanner;</span>
+
+<span class="s0">import static </span><span class="s1">org.example.aula8.Utilidades.*; </span><span class="s2">// importando a classe para facilitar a execução</span>
+
+<span class="s0">public class </span><span class="s1">Main {</span>
+
+    <span class="s2">// 1 — Na mesma classe do main, crie um método</span>
+    <span class="s2">//  chamado mostrarBoasVindas() que imprime &quot;Bem-vinda ao curso de Java!&quot;. Chame ele no main</span>
+
+    <span class="s0">static void </span><span class="s1">mostrarBoasVindas() {</span>
+
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Bem-vindo ao curso de Java!&quot;</span><span class="s1">);</span>
+
+    <span class="s1">}</span>
+
+    <span class="s0">static void </span><span class="s1">main() {</span>
+
+        <span class="s1">mostrarBoasVindas();</span>
+
+        <span class="s2">// 2 — Crie um método saudar(String nome) que imprime</span>
+        <span class="s2">//  &quot;Olá, [nome]! Tudo bem?&quot;. Chame ele três vezes, passando nomes diferentes.</span>
+
+        <span class="s1">System.out.println(saudar(</span><span class="s3">&quot;Rosaline&quot;</span><span class="s1">));</span>
+        <span class="s1">System.out.println(saudar(</span><span class="s3">&quot;Flora&quot;</span><span class="s1">));</span>
+        <span class="s1">System.out.println(saudar(</span><span class="s3">&quot;Angélica&quot;</span><span class="s1">));</span>
+
+
+        <span class="s2">// 3 — Crie um método dobro(int numero) que devolve o dobro do número recebido.</span>
+        <span class="s2">//  No main, chame ele e mostre o resultado.</span>
+
+        <span class="s1">System.out.println(</span><span class="s3">&quot;O dobro de 4 é: &quot; </span><span class="s1">+ dobro(</span><span class="s4">4</span><span class="s1">));</span>
+
+        <span class="s2">// 4 — Crie um método calcularMedia(double n1, double n2) que devolve a média das duas notas.</span>
+        <span class="s2">//  No main, peça as duas notas com Scanner e mostre a média com duas casas decimais.</span>
+
+        <span class="s0">double </span><span class="s1">n1;</span>
+        <span class="s0">double </span><span class="s1">n2;</span>
+
+        <span class="s1">Scanner sc = </span><span class="s0">new </span><span class="s1">Scanner(System.in);</span>
+
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Digite a primeira nota: &quot;</span><span class="s1">);</span>
+        <span class="s1">n1 = sc.nextDouble();</span>
+
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Digite a segunda nota: &quot;</span><span class="s1">);</span>
+        <span class="s1">n2 = sc.nextDouble();</span>
+
+        <span class="s1">System.out.printf(</span><span class="s3">&quot;A média da primeira e da segunda nota é: %.2f</span><span class="s5">\n</span><span class="s3">&quot; </span><span class="s1">, calcularMedia(n1, n2));</span>
+
+
+        <span class="s2">// 5 — Crie um método ehMaiorDeIdade(int idade) que devolve true ou false.</span>
+        <span class="s2">//  No main, peça a idade e use o retorno do método dentro de um if</span>
+        <span class="s2">//  para imprimir se a pessoa é maior ou menor de idade.</span>
+
+        <span class="s0">int </span><span class="s1">idade;</span>
+
+        <span class="s1">Scanner sc1 = </span><span class="s0">new </span><span class="s1">Scanner(System.in);</span>
+
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Digite a sua idade: &quot;</span><span class="s1">);</span>
+        <span class="s1">idade = sc1.nextInt();</span>
+
+        <span class="s0">if </span><span class="s1">(ehMaiorDeIdade(idade)) {</span>
+
+            <span class="s1">System.out.println(</span><span class="s3">&quot;A pessoa é maior de idade!&quot;</span><span class="s1">);</span>
+        <span class="s1">}</span>
+
+        <span class="s0">else </span><span class="s1">{</span>
+
+            <span class="s1">System.out.println(</span><span class="s3">&quot;A pessoa é menor de idade!&quot;</span><span class="s1">);</span>
+        <span class="s1">}</span>
+
+
+        <span class="s2">//    6 — Crie três métodos com o mesmo nome somar:</span>
+        <span class="s2">//</span>
+        <span class="s2">//    um que recebe dois inteiros</span>
+        <span class="s2">//    um que recebe três inteiros</span>
+        <span class="s2">//    um que recebe dois decimais</span>
+
+        <span class="s2">//    No main, chame os três e veja o Java escolher sozinho qual usar.</span>
+
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Selecionando um dos métodos somar: &quot; </span><span class="s1">+ somar(</span><span class="s4">4</span><span class="s1">, </span><span class="s4">5</span><span class="s1">));</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Selecionando um dos métodos somar: &quot; </span><span class="s1">+ somar(</span><span class="s4">7</span><span class="s1">, </span><span class="s4">8</span><span class="s1">, </span><span class="s4">9</span><span class="s1">));</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Selecionando um dos métodos somar: &quot; </span><span class="s1">+ somar(</span><span class="s4">9.7</span><span class="s1">, </span><span class="s4">5.4</span><span class="s1">));</span>
+
+        <span class="s2">// 7 — Crie dois métodos chamados saudacao:</span>
+        <span class="s2">//</span>
+        <span class="s2">//um sem parâmetro, que imprime &quot;Olá!&quot;</span>
+        <span class="s2">//um que recebe um nome, e imprime &quot;Olá, [nome]!&quot;</span>
+
+        <span class="s2">// Testando o primeiro método saudacao</span>
+
+        <span class="s1">System.out.println(saudacao());</span>
+
+        <span class="s2">// Testando o segundo método saudacao</span>
+
+        <span class="s1">String nome;</span>
+
+        <span class="s1">Scanner sc2 = </span><span class="s0">new </span><span class="s1">Scanner(System.in);</span>
+
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Digite o seu nome: &quot;</span><span class="s1">);</span>
+        <span class="s1">nome = sc2.nextLine();</span>
+
+        <span class="s1">System.out.println(saudacao(nome));</span>
+
+        <span class="s1">sc.close();</span>
+
+    <span class="s1">}</span>
+
+<span class="s1">}</span>
+
+<span class="s2">/* 
+ 
+*** Evidência de execução *** 
+ 
+C:\Users\souza\.jdks\openjdk-27\bin\java.exe &quot;-javaagent:D:\JetBrains\IntelliJ IDEA 2026.2.3\lib\idea_rt.jar=54090&quot; -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 -classpath C:\Users\souza\IdeaProjects\SoulCode\target\classes org.example.aula8.Main 
+ 
+Bem-vindo ao curso de Java! 
+ 
+Olá, Rosaline. Tudo bem? 
+Olá, Flora. Tudo bem? 
+Olá, Angélica. Tudo bem? 
+ 
+O dobro de 4 é: 8 
+ 
+Digite a primeira nota: 
+9 
+Digite a segunda nota: 
+8 
+A média da primeira e da segunda nota é: 8,50 
+ 
+Digite a sua idade: 
+58 
+A pessoa é maior de idade! 
+ 
+Selecionando um dos métodos somar: 9 
+Selecionando um dos métodos somar: 24 
+Selecionando um dos métodos somar: 15.1 
+ 
+Olá! 
+Digite o seu nome: 
+ 
+Rosaline 
+Olá,Rosaline! 
+ 
+Process finished with exit code 0 
+ 
+*/</span></pre>
+</body>
+</html>

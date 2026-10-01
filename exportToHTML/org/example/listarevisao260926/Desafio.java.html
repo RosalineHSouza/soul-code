@@ -1,0 +1,213 @@
+<html>
+<head>
+<title>Desafio.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #0033b3;}
+.s1 { color: #080808;}
+.s2 { color: #8c8c8c; font-style: italic;}
+.s3 { color: #1750eb;}
+.s4 { color: #067d17;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Desafio.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">org.example.listarevisao260926;</span>
+
+<span class="s0">import </span><span class="s1">java.util.Scanner;</span>
+
+<span class="s0">public class </span><span class="s1">Desafio {</span>
+    <span class="s0">static void </span><span class="s1">main() {</span>
+
+        <span class="s2">/* 
+        7 - DESAFIO — Sistema de Cadastro de Alunas 
+        Você vai construir um programa que cadastra alunas, calcula a média delas e diz se foram aprovadas. 
+        O programa fica rodando até a pessoa escolher sair. 
+        Como são muitas instruções e condições, não colocarei aqui. :-) 
+        */</span>
+
+        <span class="s0">int </span><span class="s1">escolha = </span><span class="s3">0</span><span class="s1">; </span><span class="s2">// recebe a escolha do menu</span>
+        <span class="s0">int </span><span class="s1">cadastradas = </span><span class="s3">0</span><span class="s1">; </span><span class="s2">// recebe o total de alunas cadastradas</span>
+
+        <span class="s0">while </span><span class="s1">(escolha != </span><span class="s3">2</span><span class="s1">) {</span>
+
+            <span class="s1">System.out.println(</span><span class="s4">&quot;Sistema de Cadastro de Alunas&quot;</span><span class="s1">);</span>
+            <span class="s1">System.out.println(</span><span class="s4">&quot;Por gentileza, selecione a opção desejada: &quot;</span><span class="s1">);</span>
+            <span class="s1">System.out.println(</span><span class="s4">&quot;1 - Continuar&quot;</span><span class="s1">);</span>
+            <span class="s1">System.out.println(</span><span class="s4">&quot;2 - Sair&quot;</span><span class="s1">);</span>
+            <span class="s1">System.out.println(</span><span class="s4">&quot;3 - Total de alunas cadastradas no sistema&quot;</span><span class="s1">); </span><span class="s2">// Bônus</span>
+            <span class="s1">Scanner sc = </span><span class="s0">new </span><span class="s1">Scanner(System.in);</span>
+            <span class="s1">escolha = sc.nextInt();</span>
+
+            <span class="s0">switch </span><span class="s1">(escolha) {</span>
+
+                <span class="s0">case </span><span class="s3">1</span><span class="s1">:</span>
+                    <span class="s2">// Instanciando nova aluna</span>
+                    <span class="s1">Aluna novaaluna = </span><span class="s0">new </span><span class="s1">Aluna();</span>
+
+                    <span class="s2">// Recebe a primeira nota</span>
+
+                    <span class="s0">do </span><span class="s1">{ </span><span class="s2">// Bônus: impede a digitação de nota &lt;0 ou nota &gt; 10</span>
+                        <span class="s1">System.out.println(</span><span class="s4">&quot;Digite a primeira nota da aluna: &quot;</span><span class="s1">);</span>
+
+                        <span class="s1">novaaluna.nota1 = sc.nextDouble();</span>
+
+                        <span class="s0">if </span><span class="s1">(novaaluna.nota1 &lt; </span><span class="s3">0 </span><span class="s1">|| novaaluna.nota1 &gt; </span><span class="s3">10</span><span class="s1">){</span>
+
+                            <span class="s1">System.out.println(</span><span class="s4">&quot;A nota deve estar entre 1 e 10. Por favor, digite novamente!&quot;</span><span class="s1">);</span>
+                        <span class="s1">}</span>
+
+                    <span class="s1">} </span><span class="s0">while</span><span class="s1">(novaaluna.nota1 &lt; </span><span class="s3">0 </span><span class="s1">|| novaaluna.nota1 &gt; </span><span class="s3">10</span><span class="s1">);</span>
+
+                    <span class="s2">//Recebe a segunda nota</span>
+
+                    <span class="s0">do </span><span class="s1">{ </span><span class="s2">// Bônus: impede a digitação de nota &lt;0 ou nota &gt; 10</span>
+
+                    <span class="s1">System.out.println(</span><span class="s4">&quot;Digite a segunda nota da aluna: &quot;</span><span class="s1">);</span>
+
+                    <span class="s1">novaaluna.nota2 = sc.nextDouble();</span>
+
+                        <span class="s0">if </span><span class="s1">(novaaluna.nota2 &lt; </span><span class="s3">0 </span><span class="s1">|| novaaluna.nota2 &gt; </span><span class="s3">10</span><span class="s1">){</span>
+
+                            <span class="s1">System.out.println(</span><span class="s4">&quot;A nota deve estar entre 1 e 10. Por favor, digite novamente!&quot;</span><span class="s1">);</span>
+                        <span class="s1">}</span>
+
+                    <span class="s1">} </span><span class="s0">while</span><span class="s1">(novaaluna.nota2 &lt; </span><span class="s3">0 </span><span class="s1">|| novaaluna.nota2 &gt; </span><span class="s3">10</span><span class="s1">);</span>
+
+                    <span class="s2">//Calcula a média</span>
+                    <span class="s1">novaaluna.media = (novaaluna.nota1 + novaaluna.nota2) / </span><span class="s3">2</span><span class="s1">;</span>
+
+                    <span class="s2">//Recebe o nome da aluna</span>
+                    <span class="s1">sc.nextLine(); </span><span class="s2">// Correção: Consome o '\n' que ficou sobrando (limpa o buffer)</span>
+                    <span class="s1">System.out.println(</span><span class="s4">&quot;Digite o nome da aluna: &quot;</span><span class="s1">);</span>
+                    <span class="s1">novaaluna.nome = sc.nextLine();</span>
+
+                    <span class="s2">//Determinando se a aluna foi aprovada ou reprovada</span>
+
+                    <span class="s1">String status;</span>
+
+                    <span class="s0">if </span><span class="s1">(novaaluna.media &gt;= </span><span class="s3">6</span><span class="s1">) {</span>
+
+                        <span class="s1">novaaluna.passou = </span><span class="s0">true</span><span class="s1">;</span>
+                        <span class="s1">status = </span><span class="s4">&quot;Aprovada&quot;</span><span class="s1">;</span>
+
+                    <span class="s1">} </span><span class="s0">else </span><span class="s1">{</span>
+
+                        <span class="s1">novaaluna.passou = </span><span class="s0">false</span><span class="s1">;</span>
+                        <span class="s1">status = </span><span class="s4">&quot;Reprovada&quot;</span><span class="s1">;</span>
+
+                    <span class="s1">}</span>
+
+                    <span class="s1">System.out.printf(</span><span class="s4">&quot;O nome da aluna é %s. Sua primeira nota foi %.1f, sua segunda nota foi %.1f&quot;</span>
+                                    <span class="s1">+ </span><span class="s4">&quot; e sua média foi %.1f&quot;</span><span class="s1">, novaaluna.nome, novaaluna.nota1, novaaluna.nota2,</span>
+                            <span class="s1">novaaluna.media); </span><span class="s2">// Não será exibido %b devido ao bônus abaixo</span>
+
+                    <span class="s2">// Bônus: exibe &quot;aprovada&quot; ou &quot;reprovada&quot; em vez de &quot;true&quot; ou &quot;false&quot;</span>
+
+                    <span class="s1">System.out.println(</span><span class="s4">&quot;. Situação da aluna: &quot; </span><span class="s1">+ status + </span><span class="s4">&quot;.&quot;</span><span class="s1">);</span>
+
+                    <span class="s2">// Totalizador de alunas cadastradas</span>
+                    <span class="s1">cadastradas++;</span>
+                    <span class="s0">break</span><span class="s1">;</span>
+
+                <span class="s0">case </span><span class="s3">2</span><span class="s1">:</span>
+
+                    <span class="s1">System.out.println(</span><span class="s4">&quot;Encerrando o sistema. Até logo!&quot;</span><span class="s1">);</span>
+                    <span class="s0">break</span><span class="s1">;</span>
+
+                <span class="s0">case </span><span class="s3">3</span><span class="s1">:</span>
+
+                    <span class="s1">System.out.println(</span><span class="s4">&quot;Temos, até o momento, &quot; </span><span class="s1">+ cadastradas + </span><span class="s4">&quot; aluna(s) cadastrada(s) no sistema!&quot;</span><span class="s1">);</span>
+                    <span class="s0">break</span><span class="s1">;</span>
+
+                <span class="s0">default</span><span class="s1">:</span>
+
+                    <span class="s1">System.out.println(</span><span class="s4">&quot;Opção Inválida! Digite novamente!&quot;</span><span class="s1">);</span>
+
+            <span class="s1">}</span>
+
+        <span class="s1">}</span>
+    <span class="s1">}</span>
+<span class="s1">}</span>
+
+<span class="s2">/* 
+ 
+*** Evidência de execução *** 
+ 
+C:\Users\souza\.jdks\openjdk-27\bin\java.exe &quot;-javaagent:D:\JetBrains\IntelliJ IDEA 2026.2.3\lib\idea_rt.jar=51135&quot; -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 -classpath C:\Users\souza\IdeaProjects\SoulCode\target\classes org.example.listarevisao260926.Desafio 
+Sistema de Cadastro de Alunas 
+Por gentileza, selecione a opção desejada: 
+1 - Continuar 
+2 - Sair 
+3 - Total de alunas cadastradas no sistema 
+1 
+Digite a primeira nota da aluna: 
+90 
+A nota deve estar entre 1 e 10. Por favor, digite novamente! 
+Digite a primeira nota da aluna: 
+-8 
+A nota deve estar entre 1 e 10. Por favor, digite novamente! 
+Digite a primeira nota da aluna: 
+9 
+Digite a segunda nota da aluna: 
+99 
+A nota deve estar entre 1 e 10. Por favor, digite novamente! 
+Digite a segunda nota da aluna: 
+-5 
+A nota deve estar entre 1 e 10. Por favor, digite novamente! 
+Digite a segunda nota da aluna: 
+6 
+Digite o nome da aluna: 
+Rosaline Helenna de Souza 
+O nome da aluna é Rosaline Helenna de Souza. Sua primeira nota foi 9,0, sua segunda nota foi 6,0 e sua média foi 7,5. Situação da aluna: Aprovada. 
+Sistema de Cadastro de Alunas 
+Por gentileza, selecione a opção desejada: 
+1 - Continuar 
+2 - Sair 
+3 - Total de alunas cadastradas no sistema 
+3 
+Temos, até o momento, 1 aluna(s) cadastrada(s) no sistema! 
+Sistema de Cadastro de Alunas 
+Por gentileza, selecione a opção desejada: 
+1 - Continuar 
+2 - Sair 
+3 - Total de alunas cadastradas no sistema 
+1 
+Digite a primeira nota da aluna: 
+8 
+Digite a segunda nota da aluna: 
+6 
+Digite o nome da aluna: 
+Angélica de Sá Porto 
+O nome da aluna é Angélica de Sá Porto. Sua primeira nota foi 8,0, sua segunda nota foi 6,0 e sua média foi 7,0. Situação da aluna: Aprovada. 
+Sistema de Cadastro de Alunas 
+Por gentileza, selecione a opção desejada: 
+1 - Continuar 
+2 - Sair 
+3 - Total de alunas cadastradas no sistema 
+3 
+Temos, até o momento, 2 aluna(s) cadastrada(s) no sistema! 
+Sistema de Cadastro de Alunas 
+Por gentileza, selecione a opção desejada: 
+1 - Continuar 
+2 - Sair 
+3 - Total de alunas cadastradas no sistema 
+5 
+Opção Inválida! Digite novamente! 
+Sistema de Cadastro de Alunas 
+Por gentileza, selecione a opção desejada: 
+1 - Continuar 
+2 - Sair 
+3 - Total de alunas cadastradas no sistema 
+2 
+Encerrando o sistema. Até logo! 
+ 
+Process finished with exit code 0 
+ 
+*/</span></pre>
+</body>
+</html>

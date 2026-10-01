@@ -1,0 +1,115 @@
+<html>
+<head>
+<title>Utilidades.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #0033b3;}
+.s1 { color: #080808;}
+.s2 { color: #8c8c8c; font-style: italic;}
+.s3 { color: #067d17;}
+.s4 { color: #1750eb;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Utilidades.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">org.example.aula8;</span>
+
+<span class="s0">public class </span><span class="s1">Utilidades {</span>
+
+    <span class="s2">// 2 — Crie um método saudar(String nome) que imprime &quot;Olá, [nome]! Tudo bem?&quot;.</span>
+    <span class="s2">// Chame ele três vezes, passando nomes diferentes.</span>
+
+    <span class="s0">static </span><span class="s1">String saudar(String nome) {</span>
+
+        <span class="s0">return </span><span class="s3">&quot;Olá, &quot; </span><span class="s1">+ nome + </span><span class="s3">&quot;. Tudo bem?&quot;</span><span class="s1">;</span>
+
+    <span class="s1">}</span>
+
+    <span class="s2">// 3 — Crie um método dobro(int numero) que devolve o dobro do número recebido.</span>
+    <span class="s2">//  No main, chame ele e mostre o resultado.</span>
+
+    <span class="s0">static int </span><span class="s1">dobro(</span><span class="s0">int </span><span class="s1">numero) {</span>
+
+        <span class="s0">return </span><span class="s1">numero * </span><span class="s4">2</span><span class="s1">;</span>
+
+    <span class="s1">}</span>
+
+    <span class="s2">// 4 — Crie um método calcularMedia(double n1, double n2) que devolve a média das duas notas.</span>
+    <span class="s2">//  No main, peça as duas notas com Scanner e mostre a média com duas casas decimais.</span>
+
+    <span class="s0">static double </span><span class="s1">calcularMedia(</span><span class="s0">double </span><span class="s1">n1, </span><span class="s0">double </span><span class="s1">n2) {</span>
+
+        <span class="s0">return </span><span class="s1">(n1 + n2) / </span><span class="s4">2</span><span class="s1">;</span>
+
+    <span class="s1">}</span>
+
+    <span class="s2">// 5 — Crie um método ehMaiorDeIdade(int idade) que devolve true ou false.</span>
+    <span class="s2">//  No main, peça a idade e use o retorno do método dentro de um if</span>
+    <span class="s2">//  para imprimir se a pessoa é maior ou menor de idade.</span>
+
+    <span class="s0">static boolean </span><span class="s1">ehMaiorDeIdade(</span><span class="s0">int </span><span class="s1">idade) {</span>
+
+        <span class="s0">if </span><span class="s1">(idade &gt;= </span><span class="s4">18</span><span class="s1">) {</span>
+
+            <span class="s0">return true</span><span class="s1">;</span>
+
+        <span class="s1">} </span><span class="s0">else </span><span class="s1">{</span>
+
+            <span class="s0">return false</span><span class="s1">;</span>
+        <span class="s1">}</span>
+
+    <span class="s1">}</span>
+
+    <span class="s2">// 6 — Crie três métodos com o mesmo nome somar:</span>
+    <span class="s2">//</span>
+    <span class="s2">// um que recebe dois inteiros</span>
+    <span class="s2">// um que recebe três inteiros</span>
+    <span class="s2">// um que recebe dois decimais</span>
+
+    <span class="s2">//    No main, chame os três e veja o Java escolher sozinho qual usar.</span>
+
+    <span class="s0">static int </span><span class="s1">somar(</span><span class="s0">int </span><span class="s1">n1, </span><span class="s0">int </span><span class="s1">n2){</span>
+
+        <span class="s0">return </span><span class="s1">n1 + n2;</span>
+
+    <span class="s1">}</span>
+
+    <span class="s0">static int </span><span class="s1">somar (</span><span class="s0">int </span><span class="s1">n1, </span><span class="s0">int </span><span class="s1">n2, </span><span class="s0">int </span><span class="s1">n3){</span>
+
+        <span class="s0">return </span><span class="s1">n1 + n2 + n3;</span>
+
+    <span class="s1">}</span>
+
+    <span class="s0">static double </span><span class="s1">somar (</span><span class="s0">double </span><span class="s1">n1, </span><span class="s0">double </span><span class="s1">n2){</span>
+
+        <span class="s0">return </span><span class="s1">n1 + n2;</span>
+
+    <span class="s1">}</span>
+
+
+    <span class="s2">// 7 — Crie dois métodos chamados saudacao:</span>
+    <span class="s2">//</span>
+    <span class="s2">//um sem parâmetro, que imprime &quot;Olá!&quot;</span>
+    <span class="s2">//um que recebe um nome, e imprime &quot;Olá, [nome]!&quot;</span>
+
+    <span class="s0">static </span><span class="s1">String saudacao(){</span>
+
+        <span class="s0">return </span><span class="s3">&quot;Olá!&quot;</span><span class="s1">;</span>
+
+    <span class="s1">}</span>
+
+    <span class="s0">static </span><span class="s1">String saudacao(String nome){</span>
+
+        <span class="s0">return </span><span class="s3">&quot;Olá,&quot; </span><span class="s1">+ nome + </span><span class="s3">&quot;!&quot;</span><span class="s1">;</span>
+
+    <span class="s1">}</span>
+<span class="s1">}</span>
+
+
+</pre>
+</body>
+</html>

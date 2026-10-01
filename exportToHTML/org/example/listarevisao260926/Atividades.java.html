@@ -1,0 +1,294 @@
+<html>
+<head>
+<title>Atividades.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #0033b3;}
+.s1 { color: #080808;}
+.s2 { color: #8c8c8c; font-style: italic;}
+.s3 { color: #067d17;}
+.s4 { color: #1750eb;}
+.s5 { color: #0037a6;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Atividades.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">org.example.listarevisao260926;</span>
+
+<span class="s0">import </span><span class="s1">java.util.Scanner;</span>
+
+<span class="s0">public class </span><span class="s1">Atividades {</span>
+    <span class="s0">static void </span><span class="s1">main() {</span>
+
+        <span class="s2">/* 
+        1 - Crie um programa que peça ao usuário para digitar o nome de um lanche e o valor dele. 
+        Em seguida, verifique: se o valor for maior que R$ 30.00, aplique um desconto de R$ 5.00. 
+        No final, exiba uma mensagem usando concatenação e printf para formatar o preço com duas casas decimais. 
+        Exemplo de saída: &quot;O lanche Xis-Bacon custa R$ 28.50 \n&quot; 
+        */</span>
+
+        <span class="s1">Scanner sc = </span><span class="s0">new </span><span class="s1">Scanner(System.in);</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Digite o nome do lanche:&quot;</span><span class="s1">);</span>
+        <span class="s1">String lanche = sc.nextLine();</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Digite o valor do lanche:&quot;</span><span class="s1">);</span>
+        <span class="s0">double </span><span class="s1">valor = sc.nextDouble();</span>
+
+        <span class="s0">if </span><span class="s1">(valor &gt; </span><span class="s4">30</span><span class="s1">) {</span>
+
+            <span class="s1">valor -= </span><span class="s4">5</span><span class="s1">;</span>
+        <span class="s1">}</span>
+
+        <span class="s1">System.out.printf(</span><span class="s3">&quot;O lanche %s custa R$ %.2f</span><span class="s5">\n</span><span class="s3">&quot;</span><span class="s1">, lanche, valor);</span>
+
+        <span class="s2">/* 
+        *** Evidência de execução **** 
+        Digite o nome do lanche: 
+        Xis-bacon 
+        Digite o valor do lanche: 
+        33,50 
+        O lanche Xis-bacon custa R$ 28,50 
+ 
+        Process finished with exit code 0 
+        */</span>
+
+        <span class="s2">/* 
+        2 - Faça um programa que use um laço for para contar de 1 até 15. Dentro do for, coloque um if para 
+        verificar se o número atual é par ou ímpar (dica: use o operador de resto da divisão % 2 == 0). 
+        Imprima na tela o número e a palavra correspondente. 
+        Exemplo de saída: 
+        &quot;1 é Ímpar&quot; 
+        &quot;2 é Par&quot; 
+        */</span>
+
+        <span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span class="s1">i = </span><span class="s4">0</span><span class="s1">; i &lt;= </span><span class="s4">15</span><span class="s1">; i++) {</span>
+
+            <span class="s0">if </span><span class="s1">(i % </span><span class="s4">2 </span><span class="s1">== </span><span class="s4">0</span><span class="s1">) {</span>
+
+                <span class="s1">System.out.println(i + </span><span class="s3">&quot; é Par&quot;</span><span class="s1">);</span>
+
+            <span class="s1">} </span><span class="s0">else </span><span class="s1">{</span>
+
+                <span class="s1">System.out.println(i + </span><span class="s3">&quot; é Ímpar&quot;</span><span class="s1">);</span>
+            <span class="s1">}</span>
+
+        <span class="s1">}</span>
+
+        <span class="s2">/* 
+        *** Evidência de execução *** 
+        0 é Par 
+        1 é Ímpar 
+        2 é Par 
+        3 é Ímpar 
+        4 é Par 
+        5 é Ímpar 
+        6 é Par 
+        7 é Ímpar 
+        8 é Par 
+        9 é Ímpar 
+        10 é Par 
+        11 é Ímpar 
+        12 é Par 
+        13 é Ímpar 
+        14 é Par 
+        15 é Ímpar 
+ 
+        Process finished with exit code 0 
+        */</span>
+
+        <span class="s2">/* 
+        3 - Usando um do-while e um switch, crie um menu interativo. O menu deve oferecer três opções: 
+        1 - Ver camisas 
+        2 - Ver calças 
+        3 - Sair 
+        Se a pessoa digitar 1 ou 2, exiba uma mensagem confirmando a escolha. 
+        Se digitar uma opção inválida, avise. O laço só deve ser quebrado (encerrado) quando a pessoa digitar 3. 
+ 
+        */</span>
+
+            <span class="s0">int </span><span class="s1">opcao;</span>
+
+            <span class="s0">do </span><span class="s1">{</span>
+
+                <span class="s1">System.out.println(</span><span class="s3">&quot;Digite a opção desejada:&quot;</span><span class="s1">);</span>
+                <span class="s1">System.out.println(</span><span class="s3">&quot;1 - Ver camisas&quot;</span><span class="s1">);</span>
+                <span class="s1">System.out.println(</span><span class="s3">&quot;2 - Ver calças&quot;</span><span class="s1">);</span>
+                <span class="s1">System.out.println(</span><span class="s3">&quot;3 - Sair&quot;</span><span class="s1">);</span>
+                <span class="s1">opcao = sc.nextInt();</span>
+
+                <span class="s0">switch </span><span class="s1">(opcao) {</span>
+
+                    <span class="s0">case </span><span class="s4">1</span><span class="s1">:</span>
+                        <span class="s1">System.out.println(</span><span class="s3">&quot;Confirmando a opção 1: Ver camisas!&quot;</span><span class="s1">);</span>
+                        <span class="s0">break</span><span class="s1">;</span>
+
+                    <span class="s0">case </span><span class="s4">2</span><span class="s1">:</span>
+                        <span class="s1">System.out.println(</span><span class="s3">&quot;Confirmando a opção 2: Ver calças!&quot;</span><span class="s1">);</span>
+                        <span class="s0">break</span><span class="s1">;</span>
+
+                    <span class="s0">case </span><span class="s4">3</span><span class="s1">:</span>
+                        <span class="s1">System.out.println(</span><span class="s3">&quot;Sair&quot;</span><span class="s1">);</span>
+                        <span class="s0">break</span><span class="s1">;</span>
+
+                    <span class="s0">default</span><span class="s1">:</span>
+                        <span class="s1">System.out.println(</span><span class="s3">&quot;Opção inválida! Digite novamente!&quot;</span><span class="s1">);</span>
+                <span class="s1">}</span>
+
+            <span class="s1">} </span><span class="s0">while </span><span class="s1">(opcao != </span><span class="s4">3</span><span class="s1">);</span>
+
+        <span class="s2">/* 
+        *** Evidência de execução *** 
+ 
+        Digite a opção desejada: 
+        1 - Ver camisas 
+        2 - Ver calças 
+        3 - Sair 
+        1 
+        Confirmando a opção 1: Ver camisas! 
+        Digite a opção desejada: 
+        1 - Ver camisas 
+        2 - Ver calças 
+        3 - Sair 
+        2 
+        Confirmando a opção 2: Ver calças! 
+        Digite a opção desejada: 
+        1 - Ver camisas 
+        2 - Ver calças 
+        3 - Sair 
+        4 
+        Opção inválida! Digite novamente! 
+        Digite a opção desejada: 
+        1 - Ver camisas 
+        2 - Ver calças 
+        3 - Sair 
+        3 
+        Sair 
+ 
+        Process finished with exit code 0 
+        */</span>
+
+        <span class="s2">/* 
+        4 - Crie uma classe chamada Pet. 
+        Dê a ela três atributos: nome (String), raca (String) e peso (double). 
+        Em outra classe, instancie (crie) dois objetos diferentes dessa classe (por exemplo, um cachorro e um gato). 
+        Atribua valores para os atributos de cada um deles. 
+        Imprima os dados dos dois pets concatenando textos e variáveis. 
+        */</span>
+
+            <span class="s1">Pet gato = </span><span class="s0">new </span><span class="s1">Pet();</span>
+            <span class="s1">Pet cachorro = </span><span class="s0">new </span><span class="s1">Pet();</span>
+
+            <span class="s1">gato.nome = </span><span class="s3">&quot;Caquito&quot;</span><span class="s1">;</span>
+            <span class="s1">gato.peso = </span><span class="s4">5.5</span><span class="s1">;</span>
+            <span class="s1">gato.raca = </span><span class="s3">&quot;Pelo Curto Brasileiro&quot;</span><span class="s1">;</span>
+
+            <span class="s1">cachorro.nome = </span><span class="s3">&quot;Buggy&quot;</span><span class="s1">;</span>
+            <span class="s1">cachorro.peso = </span><span class="s4">7.0</span><span class="s1">;</span>
+            <span class="s1">cachorro.raca = </span><span class="s3">&quot;Terrier Brasileiro&quot;</span><span class="s1">;</span>
+
+            <span class="s1">System.out.println(</span><span class="s3">&quot;O gato &quot; </span><span class="s1">+ gato.nome + </span><span class="s3">&quot; pesa &quot; </span><span class="s1">+ gato.peso + </span><span class="s3">&quot; kg e sua raça é &quot; </span><span class="s1">+ gato.raca);</span>
+            <span class="s1">System.out.println(</span><span class="s3">&quot;O cachorro &quot; </span><span class="s1">+ cachorro.nome + </span><span class="s3">&quot; pesa &quot; </span><span class="s1">+ cachorro.peso + </span><span class="s3">&quot; kg e sua raça é &quot; </span><span class="s1">+ cachorro.raca);</span>
+
+        <span class="s2">/* 
+        *** Evidência de execução *** 
+ 
+        O gato Caquito pesa 5.5 kg e sua raça é Pelo Curto Brasileiro 
+        O cachorro Buggy pesa 7.0 kg e sua raça é Terrier Brasileiro 
+ 
+        Process finished with exit code 0 
+ 
+        */</span>
+
+        <span class="s2">/* 
+ 
+        5 - Crie uma classe chamada Produto com os atributos nome (String) e preco (double). 
+        Na classe principal, faça um laço for que repita 3 vezes. 
+        A cada repetição, o programa deve usar o Scanner para perguntar o nome e o preço de um produto. 
+        Instancie um novo Produto e guarde nele os valores digitados. 
+        Logo em seguida, faça um if: se o preço do produto for maior que 100, imprima &quot;Produto caro!&quot;. 
+        Se for menor ou igual, imprima &quot;Produto com preço acessível!&quot;. Use printf para mostrar o valor. 
+         */</span>
+
+            <span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span class="s1">i = </span><span class="s4">1</span><span class="s1">; i &lt;= </span><span class="s4">3</span><span class="s1">; i++) {</span>
+
+                <span class="s1">Scanner sc1 = </span><span class="s0">new </span><span class="s1">Scanner(System.in);</span>
+                <span class="s1">System.out.println(</span><span class="s3">&quot;Digite o nome de um produto: &quot;</span><span class="s1">);</span>
+                <span class="s1">String nome = sc1.nextLine();</span>
+                <span class="s1">System.out.println(</span><span class="s3">&quot;Digite o preço de um produto: &quot;</span><span class="s1">);</span>
+                <span class="s0">double </span><span class="s1">preco = sc1.nextDouble();</span>
+
+                <span class="s1">Produto produto = </span><span class="s0">new </span><span class="s1">Produto();</span>
+                <span class="s1">produto.nome = nome;</span>
+                <span class="s1">produto.preco = preco;</span>
+
+                <span class="s0">if </span><span class="s1">(produto.preco &gt; </span><span class="s4">100</span><span class="s1">) {</span>
+
+                    <span class="s1">System.out.printf(</span><span class="s3">&quot;O produto %s está caro! R$ %.2f</span><span class="s5">\n</span><span class="s3">&quot;</span><span class="s1">, produto.nome, produto.preco);</span>
+
+                <span class="s1">} </span><span class="s0">else </span><span class="s1">{</span>
+
+                    <span class="s1">System.out.printf(</span><span class="s3">&quot;O produto %s está com preço acessível: R$ %.2f</span><span class="s5">\n</span><span class="s3">&quot;</span><span class="s1">, produto.nome, produto.preco);</span>
+                <span class="s1">}</span>
+
+            <span class="s1">}</span>
+
+        <span class="s2">/* 
+        *** Evidência de execução *** 
+        Digite o nome de um produto: 
+        Enceradeira 
+        Digite o preço de um produto: 
+        101 
+        Produto caro! R$ 101,00 
+        Digite o nome de um produto: 
+        Tábua de passar roupa 
+        Digite o preço de um produto: 
+        99 
+        Produto com preço acessível: R$ 99,00 
+        Digite o nome de um produto: 
+        Tanquinho 
+        Digite o preço de um produto: 
+        150 
+        Produto caro! R$ 150,00 
+ 
+        Process finished with exit code 0 
+        */</span>
+
+        <span class="s2">/* 
+        6 - Crie um programa para cadastrar um usuário. Siga exatamente esta ordem: 
+        Peça para o usuário digitar o seu Ano de Nascimento (leia usando nextInt()). 
+        Logo em seguida, peça para ele digitar o seu Nome Completo (leia usando nextLine()). 
+        Por fim, imprima uma mensagem concatenada: &quot;O usuário [NOME] nasceu em [ANO].&quot; 
+        */</span>
+
+            <span class="s2">// Reutilizando o Scanner criado para a atividade 1 (linha 15)</span>
+
+            <span class="s1">System.out.println(</span><span class="s3">&quot;Digite o seu Ano de Nascimento (formato AAAA): &quot;</span><span class="s1">);</span>
+            <span class="s0">int </span><span class="s1">anoNascimento = sc.nextInt();</span>
+            <span class="s1">sc.nextLine(); </span><span class="s2">// Correção: Consome o '\n' que ficou sobrando (limpa o buffer)</span>
+            <span class="s1">System.out.println(</span><span class="s3">&quot;Digite o seu Nome Completo: &quot;</span><span class="s1">);</span>
+            <span class="s1">String nomeCompleto = sc.nextLine();</span>
+
+            <span class="s1">System.out.println(</span><span class="s3">&quot;O usuário &quot; </span><span class="s1">+ </span><span class="s3">&quot;[&quot; </span><span class="s1">+ nomeCompleto + </span><span class="s3">&quot;]&quot; </span><span class="s1">+ </span><span class="s3">&quot; nasceu em &quot; </span><span class="s1">+ </span><span class="s3">&quot;[&quot; </span><span class="s1">+ anoNascimento + </span><span class="s3">&quot;]&quot;</span><span class="s1">);</span>
+
+        <span class="s2">/* 
+        *** Evidência de execução *** 
+ 
+        Digite o seu Ano de Nascimento (formato AAAA): 
+        1968 
+        Digite o seu Nome Completo: 
+        Rosaline Helenna de Souza 
+        O usuário [Rosaline Helenna de Souza] nasceu em [1968] 
+ 
+        Process finished with exit code 0 
+        */</span>
+
+
+    <span class="s1">}</span>
+<span class="s1">}</span>
+
+</pre>
+</body>
+</html>

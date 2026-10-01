@@ -1,0 +1,170 @@
+<html>
+<head>
+<title>EstruturasDecisao.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #0033b3;}
+.s1 { color: #080808;}
+.s2 { color: #8c8c8c; font-style: italic;}
+.s3 { color: #067d17;}
+.s4 { color: #1750eb;}
+.s5 { color: #0037a6;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+EstruturasDecisao.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">org.example.aula3;</span>
+
+<span class="s0">public class </span><span class="s1">EstruturasDecisao {</span>
+    <span class="s0">static void </span><span class="s1">main() {</span>
+
+        <span class="s2">/* 
+ 
+        1 — Crie uma variável idade e mostre a categoria de uma pessoa: menos de 13 anos é &quot;Criança&quot;, de 13 a 17 é 
+        &quot;Adolescente&quot;, de 18 a 59 é &quot;Adulto&quot; e 60 ou mais é &quot;Idoso&quot;. 
+ 
+        2 — Crie variáveis para o saldo da conta (R$ 500.00) e o valor de uma compra (R$ 320.00). 
+        Se o saldo for suficiente, mostre &quot;Compra aprovada!&quot; e o saldo restante. Se não for, mostre &quot;Saldo insuficiente&quot; 
+        e quanto está faltando. 
+ 
+        3 — Crie uma variável opcao com um número de 1 a 4 e, usando switch, mostre o pedido escolhido no cardápio: 
+        1 é Café, 2 é Cappuccino, 3 é Chocolate quente e 4 é Chá. Qualquer outro número mostra &quot;Opção inválida&quot;. 
+ 
+        4 — Crie variáveis idade (17) e temAutorizacao (true). Mostre se a pessoa pode entrar na festa: precisa ter 18 
+         anos ou ter autorização. Faça o mesmo para precisa ter 18 anos e ter autorização. 
+ 
+        Desafio: Crie variáveis para três notas de uma aluna. Calcule a média e mostre: &quot;Aprovada&quot; se for 7 ou mais, 
+        &quot;Recuperação&quot; entre 5 e 6.9, e &quot;Reprovada&quot; abaixo de 5. Mostre também a média na tela. 
+        Valores: nota1 = 5.3, nota2 = 7.8 , nota3 = 4.5. 
+ 
+        Ps: Utilize double para o valor das notas. Para controlar as casas decimais, use printf com o marcador %.2f 
+        onde você quer que apareça a média no seu texto (Troquem ele de lugar pra ver o que acontece), 
+        onde 2 é a quantidade de casas que você quer (Experimentem trocar por 3 e ver o que acontece). 
+        O texto e a pontuação vão dentro das aspas, e o \n no final pula a linha (ele funciona como  um enter 
+        para que tudo não fique colado um do lado do outro): 
+ 
+        System.out.printf(&quot;Sua média é: %.2f\n&quot;, media); 
+ 
+        */</span>
+
+        <span class="s2">// Ítem 1</span>
+
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Ítem 1&quot;</span><span class="s1">);</span>
+
+        <span class="s0">int </span><span class="s1">idade = </span><span class="s4">21</span><span class="s1">;</span>
+
+        <span class="s0">if </span><span class="s1">(idade &lt; </span><span class="s4">13</span><span class="s1">) {</span>
+            <span class="s1">System.out.println(</span><span class="s3">&quot;Criança&quot;</span><span class="s1">);</span>
+
+        <span class="s1">} </span><span class="s0">else if </span><span class="s1">(idade &gt;= </span><span class="s4">13 </span><span class="s1">&amp;&amp; idade &lt;= </span><span class="s4">17</span><span class="s1">) {</span>
+            <span class="s1">System.out.println(</span><span class="s3">&quot;Adolescente&quot;</span><span class="s1">);</span>
+
+        <span class="s1">} </span><span class="s0">else if </span><span class="s1">(idade &gt;= </span><span class="s4">18 </span><span class="s1">&amp;&amp; idade &lt;= </span><span class="s4">59</span><span class="s1">) {</span>
+            <span class="s1">System.out.println(</span><span class="s3">&quot;Adulto&quot;</span><span class="s1">);</span>
+
+        <span class="s1">} </span><span class="s0">else </span><span class="s1">{</span>
+            <span class="s1">System.out.println(</span><span class="s3">&quot;Idoso&quot;</span><span class="s1">);</span>
+        <span class="s1">}</span>
+
+        <span class="s2">// Ítem 2</span>
+
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Ítem 2&quot;</span><span class="s1">);</span>
+
+        <span class="s0">double </span><span class="s1">saldo = </span><span class="s4">500.00</span><span class="s1">;</span>
+        <span class="s0">double </span><span class="s1">compra = </span><span class="s4">320.00</span><span class="s1">;</span>
+
+        <span class="s0">if </span><span class="s1">(saldo &gt;= compra) {</span>
+
+            <span class="s1">System.out.println(</span><span class="s3">&quot;Compra aprovada! O saldo restante é de R$ &quot; </span><span class="s1">+ (saldo - compra));</span>
+
+        <span class="s1">} </span><span class="s0">else </span><span class="s1">{</span>
+
+            <span class="s1">System.out.println(</span><span class="s3">&quot;Saldo insuficiente! Estão faltando R$ &quot; </span><span class="s1">+ (Math.abs(compra - saldo)));</span>
+
+        <span class="s1">}</span>
+
+        <span class="s2">// Ítem 3</span>
+
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Ítem 3&quot;</span><span class="s1">);</span>
+
+        <span class="s0">int </span><span class="s1">opcao = </span><span class="s4">1</span><span class="s1">;</span>
+
+        <span class="s0">switch </span><span class="s1">(opcao) {</span>
+            <span class="s0">case </span><span class="s4">1</span><span class="s1">:</span>
+                <span class="s1">System.out.println(</span><span class="s3">&quot;Café&quot;</span><span class="s1">);</span>
+                <span class="s0">break</span><span class="s1">;</span>
+            <span class="s0">case </span><span class="s4">2</span><span class="s1">:</span>
+                <span class="s1">System.out.println(</span><span class="s3">&quot;Cappuccino&quot;</span><span class="s1">);</span>
+                <span class="s0">break</span><span class="s1">;</span>
+            <span class="s0">case </span><span class="s4">3</span><span class="s1">:</span>
+                <span class="s1">System.out.println(</span><span class="s3">&quot;Chocolate Quente&quot;</span><span class="s1">);</span>
+                <span class="s0">break</span><span class="s1">;</span>
+            <span class="s0">case </span><span class="s4">4</span><span class="s1">:</span>
+                <span class="s1">System.out.println(</span><span class="s3">&quot;Chá&quot;</span><span class="s1">);</span>
+                <span class="s0">break</span><span class="s1">;</span>
+            <span class="s0">default</span><span class="s1">:</span>
+                <span class="s1">System.out.println(</span><span class="s3">&quot;Opção inválida&quot;</span><span class="s1">);</span>
+                <span class="s0">break</span><span class="s1">;</span>
+        <span class="s1">}</span>
+
+        <span class="s2">// Ítem 4</span>
+
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Ítem 4&quot;</span><span class="s1">);</span>
+
+        <span class="s1">idade = </span><span class="s4">17</span><span class="s1">;</span>
+        <span class="s0">boolean </span><span class="s1">temAutorizacao = </span><span class="s0">true</span><span class="s1">;</span>
+
+        <span class="s2">// Operador OR</span>
+
+        <span class="s0">if </span><span class="s1">(idade &gt;= </span><span class="s4">18 </span><span class="s1">|| temAutorizacao == </span><span class="s0">true</span><span class="s1">) {</span>
+
+            <span class="s1">System.out.println(</span><span class="s3">&quot;Pode entrar na festa!&quot;</span><span class="s1">);</span>
+
+        <span class="s1">} </span><span class="s0">else </span><span class="s1">{</span>
+
+            <span class="s1">System.out.println(</span><span class="s3">&quot;Vá para casa e leia um livro!&quot;</span><span class="s1">);</span>
+        <span class="s1">}</span>
+
+        <span class="s2">// Operador AND</span>
+
+        <span class="s0">if </span><span class="s1">(idade &gt;= </span><span class="s4">18 </span><span class="s1">&amp;&amp; temAutorizacao == </span><span class="s0">true</span><span class="s1">) {</span>
+
+            <span class="s1">System.out.println(</span><span class="s3">&quot;Pode entrar na festa!&quot;</span><span class="s1">);</span>
+        <span class="s1">} </span><span class="s0">else </span><span class="s1">{</span>
+
+            <span class="s1">System.out.println(</span><span class="s3">&quot;Vá para casa e leia um livro!&quot;</span><span class="s1">);</span>
+        <span class="s1">}</span>
+
+        <span class="s2">// Desafio</span>
+
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Desafio&quot;</span><span class="s1">);</span>
+
+        <span class="s0">double </span><span class="s1">nota1 = </span><span class="s4">5.3</span><span class="s1">;</span>
+        <span class="s0">double </span><span class="s1">nota2 = </span><span class="s4">7.8</span><span class="s1">;</span>
+        <span class="s0">double </span><span class="s1">nota3 = </span><span class="s4">4.5</span><span class="s1">;</span>
+        <span class="s0">double </span><span class="s1">media = ((nota1 + nota2 + nota3) / </span><span class="s4">3</span><span class="s1">);</span>
+
+        <span class="s0">if </span><span class="s1">(media &gt;= </span><span class="s4">7</span><span class="s1">) {</span>
+
+            <span class="s1">System.out.printf(</span><span class="s3">&quot;Aprovado! Sua média é: %.2f</span><span class="s5">\n</span><span class="s3">&quot;</span><span class="s1">, media);</span>
+
+        <span class="s1">} </span><span class="s0">else if </span><span class="s1">(media &gt;= </span><span class="s4">5 </span><span class="s1">&amp;&amp; media &lt;= </span><span class="s4">6.9</span><span class="s1">) {</span>
+
+            <span class="s1">System.out.printf(</span><span class="s3">&quot;Recuperação. Sua média é: %.2f</span><span class="s5">\n</span><span class="s3">&quot;</span><span class="s1">, media);</span>
+
+        <span class="s1">} </span><span class="s0">else </span><span class="s1">{</span>
+
+            <span class="s1">System.out.printf(</span><span class="s3">&quot;Reprovado. Sua média é: %.2f</span><span class="s5">\n</span><span class="s3">&quot;</span><span class="s1">, media);</span>
+        <span class="s1">}</span>
+
+
+    <span class="s1">}</span>
+
+<span class="s1">}</span>
+</pre>
+</body>
+</html>

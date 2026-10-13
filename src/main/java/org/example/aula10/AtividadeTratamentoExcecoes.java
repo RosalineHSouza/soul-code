@@ -65,10 +65,14 @@ public class AtividadeTratamentoExcecoes {
 
         Scanner sc2 = new Scanner(System.in);
 
+        System.out.println("Por gentileza, digite sua idade: ");
+
+
         try {
 
-            System.out.println("Por gentileza, digite sua idade: ");
             idade = sc2.nextInt();
+
+            System.out.println("A idade digitada foi: " + idade);
 
         } catch (InputMismatchException e) {
 
@@ -97,9 +101,9 @@ public class AtividadeTratamentoExcecoes {
         int numero;
 
         Scanner sc3 = new Scanner(System.in);
+        numero = sc3.nextInt();
 
         System.out.println("Por gentieza, digite um número e vou exibir o resto da divisão de 100 por ele: ");
-        numero = sc3.nextInt();
 
         try {
 

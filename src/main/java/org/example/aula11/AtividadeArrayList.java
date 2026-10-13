@@ -17,14 +17,14 @@ public class AtividadeArrayList {
 
         // - Crie uma lista com quatro nomes. Troque o nome da posição 2 por outro e imprima a lista antes e depois.
 
-        ArrayList<String> quatronomes = new ArrayList<>(List.of("John Lennon", "Paul McCartney", "George Harrison",
+        ArrayList<String> quatroNomes = new ArrayList<>(List.of("John Lennon", "Paul McCartney", "George Harrison",
                 "Ringo Starr"));
 
-        System.out.println(quatronomes);
+        System.out.println(quatroNomes);
 
-        quatronomes.set(2,"Pete Townshend");
+        quatroNomes.set(2,"Pete Townshend");
 
-        System.out.println(quatronomes);
+        System.out.println(quatroNomes);
 
         // - Crie uma lista com quatro cidades. Remova a da posição 1 e imprima quantas sobraram.
 
@@ -40,22 +40,22 @@ public class AtividadeArrayList {
         // - Crie uma lista com seis nomes e imprima todos usando um laço, no formato "0: Ana".
         // (Dica: i + ": " + comando para pegar posição da lista)
 
-        ArrayList<String> deusasgregas = new ArrayList<>(List.of("Atena", "Afrodite", "Hera", "Artêmis", "Deméter",
+        ArrayList<String> deusasGregas = new ArrayList<>(List.of("Atena", "Afrodite", "Hera", "Artêmis", "Deméter",
                 "Héstia"));
 
-        for (int i = 0; i < deusasgregas.size(); i++){
+        for (int i = 0; i < deusasGregas.size(); i++){
 
-            System.out.println(i + ": " + deusasgregas.get(i));
+            System.out.println(i + ": " + deusasGregas.get(i));
 
         }
 
         // - Crie uma lista com cinco nomes. Peça um nome à pessoa e diga se ele está na lista e em qual posição.
         // Se não estiver, avise.
 
-        ArrayList<String> cinconomes = new ArrayList<>(List.of("Epaminondas", "Agapito", "Eufésio", "Adamastor",
+        ArrayList<String> cincoNomes = new ArrayList<>(List.of("Epaminondas", "Agapito", "Eufésio", "Adamastor",
                 "Heráclito"));
 
-        System.out.println("A lista completa para comparação é: " + cinconomes);
+        System.out.println("A lista completa para comparação é: " + cincoNomes);
 
         String nome;
 
@@ -64,9 +64,9 @@ public class AtividadeArrayList {
         System.out.println("Digite um nome e direi se está na nossa lista: ");
         nome = sc.nextLine();
 
-        if (cinconomes.contains(nome)){
+        if (cincoNomes.contains(nome)){
 
-            System.out.println("O nome " + nome + " consta na lista, na posição " + cinconomes.indexOf(nome));
+            System.out.println("O nome " + nome + " consta na lista, na posição " + cincoNomes.indexOf(nome));
 
         }
 

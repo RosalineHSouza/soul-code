@@ -13,7 +13,7 @@ public class Pet {
 
             return "Grande";
 
-        } else if ( peso > 10) {
+        } else if ( peso >= 10) {
 
             return "Médio";
 

@@ -15,23 +15,15 @@ public class DesafioFInal {
         // Inicializando vetor para armazenar o cadastro dos filmes
         // 5 posições conforme sugerido pela Flora
 
-        // Filme[] listaFilme = new Filme[5];
+        // Cria um array capaz de guardar 5 objetos do tipo Filme
 
-
-        String[] tituloFilme = new String[5];
-        String[] generoFilme = new String[5];
-        double[] notaFilme = new double[5];
-        String[] classificaoFilme = new String[5];
-        boolean[] assistidoFilme = new boolean[5];
-
+        Filme[] listaFilme = new Filme[5];
 
         // Menu
 
         int opcao = 0; // Recebe opção do menu
 
         // Guarda a posição no vetor do último cadastro
-        // evitando que seja obrigatório cadastrar todos os filmes de uma vez
-        // e impedindo a sobrescrita de filmes
 
         int posicao = 0;
 
@@ -75,7 +67,7 @@ public class DesafioFInal {
                     // Havendo menos de 5 filmes cadastrados, vai realizar
                     // novo cadastro
 
-                    if ( posicao < tituloFilme.length ) { // Não obriga a cadastrar todos os filmes de uma vez
+                    if ( posicao < listaFilme.length ) {
 
                     // Instanciando objeto
 
@@ -98,6 +90,8 @@ public class DesafioFInal {
                     filme.genero = filme.genero.toUpperCase();
 
                     // Cadastrando nota
+                    // Do...while para verificar e impedir a digitação de notas
+                    // que não estejam entre 0 e 10
 
                      do {
 
@@ -121,15 +115,15 @@ public class DesafioFInal {
                         System.out.println("Digite se já assistiou ou não ao filme (true/false): ");
                         filme.assistido = sc.nextBoolean();
 
-                    // Cadastrando os atributos nos respectivos arrays
+                    // Cadastrando os atributos no array de filmes
 
-                    tituloFilme[posicao] = filme.titulo;
-                    generoFilme[posicao] = filme.genero;
-                    notaFilme[posicao] = filme.nota;
-                    classificaoFilme[posicao] = filme.classificacao;
-                    assistidoFilme[posicao] = filme.assistido;
+                    listaFilme[posicao] = filme;
 
                     System.out.println("Filme cadastrado!");
+
+                    // Incrementa contador de posicao do array
+                    // Também será usado como contador de filmes cadastr
+
 
                     posicao++; // Incrementa contador de posicao do array
 
@@ -156,8 +150,9 @@ public class DesafioFInal {
 
                     for ( int i = 0; i < posicao; i++ ) {
 
-                        System.out.printf("%s [%s] - Nota %.1f - %s - Assistido? %b\n", tituloFilme[i],
-                                generoFilme[i], notaFilme[i], classificaoFilme[i], assistidoFilme[i]);
+                        System.out.printf("%s [%s] - Nota %.1f - %s - Assistido? %b\n", listaFilme[i].titulo,
+                                listaFilme[i].genero, listaFilme[i].nota, listaFilme[i].classificacao,
+                                listaFilme[i].assistido);
 
                     }
 
@@ -186,14 +181,15 @@ public class DesafioFInal {
                     // Percorrendo o vetor de gênero para descobrir
                     // quantos filmes são selecionáveis
 
-                    for ( int i = 0; i < generoFilme.length; i++) {
+                    for ( int i = 0; i < posicao; i++) {
 
                         // O texto fixo "Ótimo" nunca será null, então o código nunca vai quebrar
 
-                        if (generoDesejado.equalsIgnoreCase( generoFilme[i] )) {
+                        if (generoDesejado.equalsIgnoreCase( listaFilme[i].genero )) {
 
-                            System.out.printf("%s [%s] - Nota %.1f - %s - Assistido? %b\n", tituloFilme[i],
-                                    generoFilme[i], notaFilme[i],classificaoFilme[i], assistidoFilme[i]);
+                            System.out.printf("%s [%s] - Nota %.1f - %s - Assistido? %b\n", listaFilme[i].titulo,
+                                    listaFilme[i].genero, listaFilme[i].nota,
+                                    listaFilme[i].classificacao, listaFilme[i].assistido);
 
                         }
 
@@ -229,14 +225,14 @@ public class DesafioFInal {
                         // ignorando a caixa e o cadastrado no array de fimes
                         //
 
-                        if( buscaFilme.equalsIgnoreCase( tituloFilme[i] ) ) {
+                        if( buscaFilme.equalsIgnoreCase( listaFilme[i].titulo ) ) {
 
                             // Se encontrou correspondência listar os atributos
 
-                            System.out.println("Nome do filme: " + tituloFilme[i]);
-                            System.out.println("Gênero do filme: " + generoFilme[i]);
-                            System.out.println("Nota do filme: " + notaFilme[i]);
-                            System.out.println("Classificação do filme: " + classificaoFilme[i]);
+                            System.out.println("Nome do filme: " + listaFilme[i].titulo);
+                            System.out.println("Gênero do filme: " + listaFilme[i].genero);
+                            System.out.println("Nota do filme: " + listaFilme[i].nota);
+                            System.out.println("Classificação do filme: " + listaFilme[i].classificacao);
 
                             filmePesquisado = true;
 
@@ -271,7 +267,7 @@ public class DesafioFInal {
                     double maiorNota = 0;
                     int posicaoMaiorNota = 0;
 
-                    double menorNota = 10;
+                    double menorNota = 11;
                     int posicaoMenorNota = 0;
 
                     double totalNota = 0; // Totalizador de notas
@@ -283,9 +279,9 @@ public class DesafioFInal {
 
                     // Percorrendo o vetor de notas para calcular o total das notas
 
-                    for ( int i = 0; i < notaFilme.length; i++ ) {
+                    for ( int i = 0; i < posicao; i++ ) {
 
-                        totalNota += notaFilme[i];
+                        totalNota += listaFilme[i].nota;
 
                     }
 
@@ -299,17 +295,17 @@ public class DesafioFInal {
 
                         // Verifica se a nota atual é maior que a maior registrada
 
-                        if ( notaFilme[i] > maiorNota ) {
+                        if ( listaFilme[i].nota > maiorNota ) {
 
-                            maiorNota = notaFilme[i];
+                            maiorNota = listaFilme[i].nota;
                             posicaoMaiorNota = i;
                         }
 
                         // Verifica se a nota atual é menor que a menor registrada
 
-                        if ( notaFilme[i] < menorNota ) {
+                        if ( listaFilme[i].nota < menorNota ) {
 
-                            menorNota = notaFilme[i];
+                            menorNota = listaFilme[i].nota;
                             posicaoMenorNota = i;
                         }
                     }
@@ -317,19 +313,19 @@ public class DesafioFInal {
                     // Mostrando o melhor filme com base na maior nota
                     // Mostrando o pior filme com base na menor nota
 
-                    System.out.println("Melhor filme cadastrado: " + tituloFilme[posicaoMaiorNota] +
+                    System.out.println("Melhor filme cadastrado: " + listaFilme[posicaoMaiorNota].titulo +
                             " (Nota: " + maiorNota + ")");
-                    System.out.println("Pior filme cadastrado: " + tituloFilme[posicaoMenorNota] +
+                    System.out.println("Pior filme cadastrado: " + listaFilme[posicaoMenorNota].titulo +
                             " (Nota: " + menorNota + ")");
 
                     // Percorrendo o vetor de classificação para descobrir
                     // quantos filmes são ótimos
 
-                    for ( int i = 0; i < classificaoFilme.length; i++) {
+                    for ( int i = 0; i < posicao; i++) {
 
                         // O texto fixo "Ótimo" nunca será null, então o código nunca vai quebrar
 
-                        if ("Ótimo".equals( classificaoFilme[i] )) {
+                        if ( listaFilme[i].classificacao.equals( "Ótimo" ) ) {
 
                             contaFilmeOtimo++;
 

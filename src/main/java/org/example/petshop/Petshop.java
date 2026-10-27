@@ -166,7 +166,13 @@ public class Petshop {
 
             } catch (InputMismatchException e) {
 
-                sc.nextLine(); // Impede loop infinito no menu
+                System.out.println("Entrada inválida! Digite um número.");
+
+                sc.nextLine(); // Descarta a entrada inválida e impede loop infinito
+
+                continue; // Volta ao início do while
+
+
 
             }
 
@@ -400,6 +406,8 @@ public class Petshop {
                     System.out.println("Temos " + posicao + " pets cadastrados de um total de " + listaPet.length +
                             " posicões disponíveis.");
 
+                    break;
+
                 case 0:
 
                     System.out.println("Obrigada! Saindo do sistema...");
@@ -413,6 +421,8 @@ public class Petshop {
 
             }
         }
+
+        sc.close();
 
     }
 
